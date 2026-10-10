@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightfall Protocol</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hud-shell">
+      <div class="title-bar">
+        <div>
+          <p class="eyebrow">Tactical Horror FPS</p>
+          <h1>Nightfall Protocol</h1>
+        </div>
+        <div class="level-box">
+          <span>LEVEL</span>
+          <strong id="levelValue">1</strong>
+        </div>
+      </div>
+
+      <div class="interface">
+        <aside class="panel left-panel">
+          <h2>Agent</h2>
+          <div id="agentList" class="agent-list"></div>
+          <div class="stats-box">
+            <div><span>Weapon</span><strong id="weaponName">-</strong></div>
+            <div><span>Ability</span><strong id="abilityName">-</strong></div>
+            <div><span>Health</span><strong id="healthValue">100</strong></div>
+            <div><span>Ammo</span><strong id="ammoValue">12 / 60</strong></div>
+          </div>
+        </aside>
+
+        <main class="arena-wrap">
+          <canvas id="gameCanvas" width="960" height="540"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-card">
+              <p class="eyebrow">Ashen District</p>
+              <h2>Hold the Night</h2>
+              <p>
+                Survive the cursed horde and secure the three control points in the
+                abandoned district before the fog consumes the city.
+              </p>
+              <button id="startButton">Deploy</button>
+            </div>
+          </div>
+        </main>
+
+        <aside class="panel right-panel">
+          <h2>Mission</h2>
+          <ul id="missionList" class="mission-list">
+            <li>Secure Valley Point</li>
+            <li>Defend Chapel Lift</li>
+            <li>Hold Signal Tower</li>
+          </ul>
+          <div class="stats-box">
+            <div><span>Score</span><strong id="scoreValue">0</strong></div>
+            <div><span>Threat</span><strong id="threatValue">Low</strong></div>
+            <div><span>Zone</span><strong id="zoneValue">District</strong></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
