@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightfall Protocol - Battle Royale</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hud-shell">
+      <!-- TOP BAR -->
+      <div class="top-bar">
+        <div class="game-title">
+          <p class="eyebrow">Tactical Horror BR</p>
+          <h1>Nightfall Protocol</h1>
+        </div>
+        <div class="match-stats">
+          <div class="stat-item">
+            <span>Players Alive</span>
+            <strong id="playersAlive">100</strong>
+          </div>
+          <div class="stat-item">
+            <span>Zone Closing</span>
+            <strong id="zoneTimer">60s</strong>
+          </div>
+          <div class="stat-item">
+            <span>Rank</span>
+            <strong id="rankValue">#100</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN LAYOUT -->
+      <div class="game-container">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar left-sidebar">
+          <h3>Your Agent</h3>
+          <div id="agentPanel" class="agent-panel"></div>
+          
+          <h3 style="margin-top: 20px;">Loadout</h3>
+          <div class="loadout-box">
+            <div class="weapon-slot">
+              <span>Primary</span>
+              <strong id="primaryWeapon">Bone Chime</strong>
+            </div>
+            <div class="weapon-slot">
+              <span>Secondary</span>
+              <strong id="secondaryWeapon">-</strong>
+            </div>
+            <div class="weapon-slot">
+              <span>Utility</span>
+              <strong id="utilityWeapon">-</strong>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 20px;">Inventory</h3>
+          <div id="inventoryList" class="inventory-list"></div>
+        </aside>
+
+        <!-- CENTER GAME AREA -->
+        <div class="game-area">
+          <canvas id="gameCanvas" width="1024" height="576"></canvas>
+          
+          <!-- CROSSHAIR -->
+          <div id="crosshair" class="crosshair"></div>
+          
+          <!-- MINI MAP -->
+          <div id="miniMap" class="mini-map">
+            <canvas id="minimapCanvas" width="140" height="140"></canvas>
+          </div>
+
+          <!-- DAMAGE INDICATOR -->
+          <div id="damageIndicator" class="damage-indicator"></div>
+
+          <!-- LOADING SCREEN / MATCH END -->
+          <div id="matchOverlay" class="match-overlay">
+            <div class="overlay-content">
+              <p class="eyebrow" id="overlayEyebrow">Ashen District</p>
+              <h2 id="overlayTitle">100 Players Dropping</h2>
+              <p id="overlayDesc">Select your agent and prepare for combat. Last one standing wins.</p>
+              <div id="agentSelectContainer" class="agent-select-container"></div>
+              <button id="deployButton" class="deploy-btn">Deploy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar right-sidebar">
+          <h3>Live Feed</h3>
+          <div id="killFeed" class="kill-feed"></div>
+
+          <h3 style="margin-top: 20px;">Nearby Players</h3>
+          <div id="nearbyPlayers" class="nearby-list"></div>
+
+          <h3 style="margin-top: 20px;">Zone Info</h3>
+          <div class="zone-info">
+            <div><span>Safe Zone Radius</span><strong id="zoneRadius">400m</strong></div>
+            <div><span>Threat Level</span><strong id="threatLevel">Low</strong></div>
+            <div><span>Next Circle</span><strong id="nextCircle">45s</strong></div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- BOTTOM HUD -->
+      <div class="bottom-hud">
+        <div class="health-bar-container">
+          <div class="health-label">HEALTH</div>
+          <div class="health-bar">
+            <div id="healthFill" class="health-fill"></div>
+          </div>
+          <div id="healthText" class="health-text">100 / 100</div>
+        </div>
+
+        <div class="ammo-display">
+          <div class="ammo-label">AMMO</div>
+          <div class="ammo-counter">
+            <span id="ammoMag">30</span>
+            <span class="divider">/</span>
+            <span id="ammoReserve">120</span>
+          </div>
+        </div>
+
+        <div class="ability-display">
+          <div class="ability-slot">
+            <div id="abilityIcon" class="ability-icon"></div>
+            <div id="abilityCooldown" class="ability-cooldown"></div>
+            <span class="keybind">SPACE</span>
+          </div>
+        </div>
+
+        <div class="position-display">
+          <div><span>X:</span><strong id="posX">0</strong></div>
+          <div><span>Y:</span><strong id="posY">0</strong></div>
+          <div><span>FPS:</span><strong id="fps">60</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
